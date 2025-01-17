@@ -1,0 +1,5 @@
+# Start from the official Triton container
+FROM nvcr.io/nvidia/tritonserver:23.01-py3
+
+# Install PyTorch, Transformers, and any other dependencies you need
+RUN apt-get update && apt-get install -y git &&     pip3 install --no-cache-dir torch transformers
