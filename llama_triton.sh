@@ -144,9 +144,8 @@ class TritonPythonModel:
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.float16).cuda()
-
-	# Print a parameter's dtype to confirm
-	print(">>> Debug: Model dtype:", next(self.model.parameters()).dtype)
+        # Print a parameter's dtype to confirm
+        print(">>> Debug: Model dtype:", next(self.model.parameters()).dtype)
 
         self.pipe = pipeline(
             "text-generation",
